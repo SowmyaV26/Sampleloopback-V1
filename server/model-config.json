@@ -35,12 +35,8 @@
     "dataSource": "db",
     "public": false
   },
-  "registeruser": {
+  "empdetails": {
     "dataSource": "db",
-    "public": true
-  },
-  "loginwithpassword": {
-    "dataSource": "mysqlds",
     "public": true
   }
 }

@@ -7,8 +7,17 @@
 
 const loopback = require('loopback');
 const boot = require('loopback-boot');
+const bodyParser = require('body-parser');
 
 const app = module.exports = loopback();
+app.NODE_ENV = process.env.NODE_ENV || 'development';
+app.APP_TYPE = 'main';
+
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({extended: true})); // for parsing application/x-www-form-urlencoded
+
+//process.mainServerDirectory = '' + __dirname;
+//app.globalConfig = require(`./global-config.${app.NODE_ENV}.json`);
 
 app.start = function() {
   // start the web server
